@@ -572,7 +572,7 @@ function renderCard(p){
 
   // Metrics row
   const actDelta=p.result==='WIN'||p.result==='LOSS'?
-    `<div class="cm"><div class="cm-v" style="color:${+p.delta>=0?'var(--gr)':'var(--rd)'">${p.actualPts!=null?p.actualPts+'pts':'—'}</div><div class="cm-l">Actual</div></div>`:
+    `<div class="cm"><div class="cm-v" style="color:${+p.delta>=0?'var(--gr)':'var(--rd)'}">${p.actualPts!=null?p.actualPts+'pts':'—'}</div><div class="cm-l">Actual</div></div>`:
     `<div class="cm"><div class="cm-v">${p.predPts!=null?p.predPts+'pts':'—'}</div><div class="cm-l">Projected</div></div>`;
   h+=`<div class="card-metrics">
     <div class="cm"><div class="cm-v">${fmt1(p.l10)}</div><div class="cm-l">L10</div></div>
