@@ -806,7 +806,7 @@ function card(p){
       ${[['L3',p.l3,clr(p.l3,p.line)],['L5',p.l5,clr(p.l5,p.line)],['L10',p.l10,clr(p.l10,p.line)]].map(([k2,v,c])=>`<div class="kv"><div class="kv-l">${k2}</div><div class="kv-v" style="color:${c}">${v??'—'}</div></div>`).join('')}
       <div class="kv"><div class="kv-l">Odds</div><div class="kv-v" style="font-size:11px;color:var(--tx2)">${_oddsDisp}</div></div>
     </div>
-    <div style="flex:1;min-width:0;overflow:hidden">${spark(p.recent20||[],p.line,p.recent20homes||[])}</div>
+    <div style="flex:1;min-width:0;overflow:hidden">${spark([...(p.recent20||[])].reverse(),p.line,[...(p.recent20homes||[])].reverse())}</div>
   </div>`;
 
   // CONFIDENCE BAR
@@ -838,9 +838,9 @@ function card(p){
     }).join('');
     h+=`<div style="margin-top:6px">
       <div style="display:flex;justify-content:space-between;font:400 6px var(--M);color:var(--tx4);margin-bottom:2px">
-        <span style="color:var(--tx3)">NEW ←</span>
+        <span style="color:var(--tx3)">← OLD</span>
         <span style="color:var(--tx4)">${p.recentOver||0}↑ ${p.recentUnder??0}↓ (L${sc.length})</span>
-        <span style="color:var(--tx3)">→ OLD</span>
+        <span style="color:var(--tx3)">NEW →</span>
       </div>
       <div style="display:flex;gap:2px;width:100%">${pills}</div>
     </div>`;
